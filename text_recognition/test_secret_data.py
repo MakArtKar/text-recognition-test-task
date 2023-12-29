@@ -8,7 +8,7 @@ from text_recognition.evaluation import evaluate_model
 def main():
     model = OCRModel()
     data_path = Path.home() / 'secret_data'
-    accuracy = evaluate_model(model, data_path)
+    accuracy = evaluate_model(model, data_path)[:-1]
     print(f'Final accuracy is {accuracy:.3f}')
 
 

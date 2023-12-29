@@ -1,5 +1,6 @@
 from pathlib import Path
 
+import pytesseract
 
 class OCRModel:
     def recognize_text(self, image: Path) -> str:
@@ -9,4 +10,4 @@ class OCRModel:
         :param image: The path to the image file.
         :return: The recognized text from the image.
         """
-        return 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+        return pytesseract.image_to_string(str(image), lang='chi_sim')[:-1]
